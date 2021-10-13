@@ -9,7 +9,6 @@ provider:
   name: aws
   runtime: nodejs12.x
   lambdaHashingVersion: 20201221
-  stage: dev
   region: us-east-1
 
 # you can add statements to the Lambda function's IAM Role here
@@ -42,7 +41,7 @@ functions:
           path: get-user/{ID} # ID will be passed to lambda in "pathParameters"
           method: get
           cors: true # To hit API from a webpage.
-          
+
 #resources:
 #  Resources:
 #    NewResource:
