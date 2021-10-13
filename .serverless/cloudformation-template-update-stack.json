@@ -74,7 +74,7 @@
     "HelloLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/serverless-framework-ci-cd-dev-hello"
+        "LogGroupName": "/aws/lambda/cicd-service1-dev-hello"
       }
     },
     "IamRoleLambdaExecution": {
@@ -102,7 +102,7 @@
               "Fn::Join": [
                 "-",
                 [
-                  "serverless-framework-ci-cd",
+                  "cicd-service1",
                   "dev",
                   "lambda"
                 ]
@@ -119,7 +119,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-framework-ci-cd-dev*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/cicd-service1-dev*:*"
                     }
                   ]
                 },
@@ -130,7 +130,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-framework-ci-cd-dev*:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/cicd-service1-dev*:*:*"
                     }
                   ]
                 }
@@ -143,7 +143,7 @@
           "Fn::Join": [
             "-",
             [
-              "serverless-framework-ci-cd",
+              "cicd-service1",
               "dev",
               {
                 "Ref": "AWS::Region"
@@ -207,11 +207,11 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-framework-ci-cd/dev/1634090818440-2021-10-13T02:06:58.440Z/serverless-framework-ci-cd.zip"
+          "S3Key": "serverless/cicd-service1/dev/1634092179838-2021-10-13T02:29:39.838Z/cicd-service1.zip"
         },
         "Handler": "s_hello.handler",
         "Runtime": "nodejs12.x",
-        "FunctionName": "serverless-framework-ci-cd-dev-hello",
+        "FunctionName": "cicd-service1-dev-hello",
         "MemorySize": 1024,
         "Timeout": 6,
         "Role": {
@@ -225,20 +225,20 @@
         "HelloLogGroup"
       ]
     },
-    "HelloLambdaVersionhlmuHX9CFTm1BRkS5L6iNd0ghjBBBz7pt3MUpFgs": {
+    "HelloLambdaVersionIz9JR3RINQTs9t4ZBN28GP1D3xTytsuvxnbs9zulAsY": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "HelloLambdaFunction"
         },
-        "CodeSha256": "O/dXa60T09n06wHVrUmR2NkqOtb9fgIzMaXA5ig6AWw="
+        "CodeSha256": "3LZCa+/yb6X/STPq7KjQU5/CM/eYh2Z0qQVoPlKsi8U="
       }
     },
     "CWLSubFilterHelloLogGroupUsEast1": {
       "Type": "AWS::Logs::SubscriptionFilter",
       "Properties": {
-        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:d1a3f9c7-8ade-4667-8144-3033de75e981#G0d952Yr1lQ86mYNQm#serverless-framework-ci-cd#dev",
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:d1a3f9c7-8ade-4667-8144-3033de75e981#G0d952Yr1lQ86mYNQm#cicd-service1#dev",
         "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
         "LogGroupName": {
           "Ref": "HelloLogGroup"
@@ -252,7 +252,7 @@
         "Ref": "ServerlessDeploymentBucket"
       },
       "Export": {
-        "Name": "sls-serverless-framework-ci-cd-dev-ServerlessDeploymentBucketName"
+        "Name": "sls-cicd-service1-dev-ServerlessDeploymentBucketName"
       }
     },
     "EnterpriseLogAccessIamRole": {
@@ -263,16 +263,16 @@
         ]
       },
       "Export": {
-        "Name": "sls-serverless-framework-ci-cd-dev-EnterpriseLogAccessIamRole"
+        "Name": "sls-cicd-service1-dev-EnterpriseLogAccessIamRole"
       }
     },
     "HelloLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "HelloLambdaVersionhlmuHX9CFTm1BRkS5L6iNd0ghjBBBz7pt3MUpFgs"
+        "Ref": "HelloLambdaVersionIz9JR3RINQTs9t4ZBN28GP1D3xTytsuvxnbs9zulAsY"
       },
       "Export": {
-        "Name": "sls-serverless-framework-ci-cd-dev-HelloLambdaFunctionQualifiedArn"
+        "Name": "sls-cicd-service1-dev-HelloLambdaFunctionQualifiedArn"
       }
     }
   }
