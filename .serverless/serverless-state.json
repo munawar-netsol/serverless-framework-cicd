@@ -1,8 +1,8 @@
 {
   "service": {
-    "service": "serverless-framework-ci-cd",
+    "service": "cicd-service1",
     "serviceObject": {
-      "name": "serverless-framework-ci-cd"
+      "name": "cicd-service1"
     },
     "provider": {
       "name": "aws",
@@ -87,7 +87,7 @@
           "HelloLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/serverless-framework-ci-cd-dev-hello"
+              "LogGroupName": "/aws/lambda/cicd-service1-dev-hello"
             }
           },
           "IamRoleLambdaExecution": {
@@ -115,7 +115,7 @@
                     "Fn::Join": [
                       "-",
                       [
-                        "serverless-framework-ci-cd",
+                        "cicd-service1",
                         "dev",
                         "lambda"
                       ]
@@ -132,7 +132,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-framework-ci-cd-dev*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/cicd-service1-dev*:*"
                           }
                         ]
                       },
@@ -143,7 +143,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-framework-ci-cd-dev*:*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/cicd-service1-dev*:*:*"
                           }
                         ]
                       }
@@ -156,7 +156,7 @@
                 "Fn::Join": [
                   "-",
                   [
-                    "serverless-framework-ci-cd",
+                    "cicd-service1",
                     "dev",
                     {
                       "Ref": "AWS::Region"
@@ -220,11 +220,11 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-framework-ci-cd/dev/1634091497961-2021-10-13T02:18:17.961Z/serverless-framework-ci-cd.zip"
+                "S3Key": "serverless/cicd-service1/dev/1634092179838-2021-10-13T02:29:39.838Z/cicd-service1.zip"
               },
               "Handler": "s_hello.handler",
               "Runtime": "nodejs12.x",
-              "FunctionName": "serverless-framework-ci-cd-dev-hello",
+              "FunctionName": "cicd-service1-dev-hello",
               "MemorySize": 1024,
               "Timeout": 6,
               "Role": {
@@ -238,20 +238,20 @@
               "HelloLogGroup"
             ]
           },
-          "HelloLambdaVersioncNDgUvNq2AzGQ2Zi9zsyNH5wpegJEulpydD8Fo5M": {
+          "HelloLambdaVersionIz9JR3RINQTs9t4ZBN28GP1D3xTytsuvxnbs9zulAsY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HelloLambdaFunction"
               },
-              "CodeSha256": "ENJda04bxOsmJoOF4yQbtcU2NgiiAb6lENVHfSzZIos="
+              "CodeSha256": "3LZCa+/yb6X/STPq7KjQU5/CM/eYh2Z0qQVoPlKsi8U="
             }
           },
           "CWLSubFilterHelloLogGroupUsEast1": {
             "Type": "AWS::Logs::SubscriptionFilter",
             "Properties": {
-              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:d1a3f9c7-8ade-4667-8144-3033de75e981#G0d952Yr1lQ86mYNQm#serverless-framework-ci-cd#dev",
+              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:d1a3f9c7-8ade-4667-8144-3033de75e981#G0d952Yr1lQ86mYNQm#cicd-service1#dev",
               "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
               "LogGroupName": {
                 "Ref": "HelloLogGroup"
@@ -265,7 +265,7 @@
               "Ref": "ServerlessDeploymentBucket"
             },
             "Export": {
-              "Name": "sls-serverless-framework-ci-cd-dev-ServerlessDeploymentBucketName"
+              "Name": "sls-cicd-service1-dev-ServerlessDeploymentBucketName"
             }
           },
           "EnterpriseLogAccessIamRole": {
@@ -276,16 +276,16 @@
               ]
             },
             "Export": {
-              "Name": "sls-serverless-framework-ci-cd-dev-EnterpriseLogAccessIamRole"
+              "Name": "sls-cicd-service1-dev-EnterpriseLogAccessIamRole"
             }
           },
           "HelloLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloLambdaVersioncNDgUvNq2AzGQ2Zi9zsyNH5wpegJEulpydD8Fo5M"
+              "Ref": "HelloLambdaVersionIz9JR3RINQTs9t4ZBN28GP1D3xTytsuvxnbs9zulAsY"
             },
             "Export": {
-              "Name": "sls-serverless-framework-ci-cd-dev-HelloLambdaFunctionQualifiedArn"
+              "Name": "sls-cicd-service1-dev-HelloLambdaFunctionQualifiedArn"
             }
           }
         }
@@ -379,13 +379,13 @@
       "hello": {
         "handler": "s_hello.handler",
         "events": [],
-        "name": "serverless-framework-ci-cd-dev-hello",
+        "name": "cicd-service1-dev-hello",
         "package": {},
         "memory": 1024,
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "HelloLambdaVersioncNDgUvNq2AzGQ2Zi9zsyNH5wpegJEulpydD8Fo5M"
+        "versionLogicalId": "HelloLambdaVersionIz9JR3RINQTs9t4ZBN28GP1D3xTytsuvxnbs9zulAsY"
       }
     },
     "configValidationMode": "warn",
@@ -411,10 +411,10 @@
     "isDashboardAppPreconfigured": true,
     "orgUid": "d1a3f9c7-8ade-4667-8144-3033de75e981",
     "appUid": "G0d952Yr1lQ86mYNQm",
-    "artifact": "D:\\AWS\\Practical AWS Developer\\Serverless Framework\\Practice Projects\\serverless-framework-ci-cd\\.serverless\\serverless-framework-ci-cd.zip"
+    "artifact": "D:\\AWS\\Practical AWS Developer\\Serverless Framework\\Practice Projects\\serverless-framework-ci-cd\\.serverless\\cicd-service1.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-framework-ci-cd/dev/1634091497961-2021-10-13T02:18:17.961Z",
-    "artifact": "serverless-framework-ci-cd.zip"
+    "artifactDirectoryName": "serverless/cicd-service1/dev/1634092179838-2021-10-13T02:29:39.838Z",
+    "artifact": "cicd-service1.zip"
   }
 }
