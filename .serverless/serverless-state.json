@@ -220,7 +220,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-framework-ci-cd/dev/1634090818440-2021-10-13T02:06:58.440Z/serverless-framework-ci-cd.zip"
+                "S3Key": "serverless/serverless-framework-ci-cd/dev/1634091497961-2021-10-13T02:18:17.961Z/serverless-framework-ci-cd.zip"
               },
               "Handler": "s_hello.handler",
               "Runtime": "nodejs12.x",
@@ -238,14 +238,14 @@
               "HelloLogGroup"
             ]
           },
-          "HelloLambdaVersionhlmuHX9CFTm1BRkS5L6iNd0ghjBBBz7pt3MUpFgs": {
+          "HelloLambdaVersioncNDgUvNq2AzGQ2Zi9zsyNH5wpegJEulpydD8Fo5M": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HelloLambdaFunction"
               },
-              "CodeSha256": "O/dXa60T09n06wHVrUmR2NkqOtb9fgIzMaXA5ig6AWw="
+              "CodeSha256": "ENJda04bxOsmJoOF4yQbtcU2NgiiAb6lENVHfSzZIos="
             }
           },
           "CWLSubFilterHelloLogGroupUsEast1": {
@@ -282,7 +282,7 @@
           "HelloLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloLambdaVersionhlmuHX9CFTm1BRkS5L6iNd0ghjBBBz7pt3MUpFgs"
+              "Ref": "HelloLambdaVersioncNDgUvNq2AzGQ2Zi9zsyNH5wpegJEulpydD8Fo5M"
             },
             "Export": {
               "Name": "sls-serverless-framework-ci-cd-dev-HelloLambdaFunctionQualifiedArn"
@@ -385,7 +385,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "HelloLambdaVersionhlmuHX9CFTm1BRkS5L6iNd0ghjBBBz7pt3MUpFgs"
+        "versionLogicalId": "HelloLambdaVersioncNDgUvNq2AzGQ2Zi9zsyNH5wpegJEulpydD8Fo5M"
       }
     },
     "configValidationMode": "warn",
@@ -414,7 +414,7 @@
     "artifact": "D:\\AWS\\Practical AWS Developer\\Serverless Framework\\Practice Projects\\serverless-framework-ci-cd\\.serverless\\serverless-framework-ci-cd.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-framework-ci-cd/dev/1634090818440-2021-10-13T02:06:58.440Z",
+    "artifactDirectoryName": "serverless/serverless-framework-ci-cd/dev/1634091497961-2021-10-13T02:18:17.961Z",
     "artifact": "serverless-framework-ci-cd.zip"
   }
 }
