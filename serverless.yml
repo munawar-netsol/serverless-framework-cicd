@@ -35,7 +35,14 @@ provider:
 functions:
   hello:
     handler: handler.hello
-
+  getUser:
+    handler: src/getUser.handler
+    events: # For configuring API 
+      - http:
+          path: get-user/{ID} # ID will be passed to lambda in "pathParameters"
+          method: get
+          cors: true # To hit API from a webpage.
+          
 #resources:
 #  Resources:
 #    NewResource:
