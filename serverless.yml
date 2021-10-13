@@ -1,4 +1,4 @@
-service: serverless-framework-ci-cd
+service: cicd-service1
 # app and org for use with dashboard.serverless.com
 app: first-cicd
 org: munawar
