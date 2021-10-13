@@ -16,6 +16,5 @@ exports.handler = async event => {
 }
 
 const data = {
-    123: { name: 'Anna', age: 25, job: 'Journalist' },
-    234: { name: 'Chris', age: 35, job: 'Programmer' }
+    123: { name: 'Anna', age: 25, job: 'Journalist' }
 };
